@@ -1,0 +1,22 @@
+<h2>Places I've Been</h2>
+
+<ul class="place-list">
+  <% for place in @places %>
+    <li>
+      <a href="/places/<%= place["id"] %>">
+        <%= place["name"] %>
+        <% if place.entries.count > 0 %>
+          <span style="color: #7f8c8d; font-size: 0.8em;">
+            <%= place.entries.count %> <%= place.entries.count == 1 ? 'entry' : 'entries' %>
+          </span>
+        <% end %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<div class="actions">
+  <a href="/places/new">
+    <button>Add a New Place</button>
+  </a>
+</div>
